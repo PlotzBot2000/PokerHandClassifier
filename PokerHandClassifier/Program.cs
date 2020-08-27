@@ -17,8 +17,6 @@ namespace PokerHandClassifier
                     //Launch and obtain Cards
                     Console.Write("Please enter your cards: ");
                     var pokerHand = Console.ReadLine();
-                    //string pokerHand = "AS, 10C, 10C, 3D, 3S";   //TODO: remove --for debugging
-
 
                     //Check is cards are valid
                     var checkCards = new CardsChecker();
@@ -33,7 +31,7 @@ namespace PokerHandClassifier
                     {
                         //Call Card classifier
                         var API = new APIUtil();
-                        string handType = API.MakePostRequest(); //TODO: Complete
+                        string handType = API.MakePostRequest(pokerHand);
 
                         Console.WriteLine("Your best hand is " + handType);
                         Console.WriteLine("Press any key to continue");

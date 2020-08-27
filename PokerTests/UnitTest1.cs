@@ -162,5 +162,29 @@ namespace PokerTests
                 Assert.Pass();
             }
         }
+
+        [Test]
+
+        public void APITest1()
+        {
+            string testCards = "AC,AS,10C,KD,3S";
+            var testAPI = new APIUtil();
+            string tmpString = testAPI.MakePostRequest(testCards);
+
+            Assert.AreEqual(tmpString, "Pair, A's");
+
+        }
+
+        [Test]
+
+        public void APITest2()
+        {
+            string testCards = "AC,2S,3C,4H,5S";
+            var testAPI = new APIUtil();
+            string tmpString = testAPI.MakePostRequest(testCards);
+
+            Assert.AreEqual(tmpString, "Straight, 5 High");
+
+        }
     }
 }

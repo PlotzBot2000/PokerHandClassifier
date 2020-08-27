@@ -14,6 +14,7 @@ namespace PokerHandClassifier
             try
             {
                 //Splits string to array
+                allCards.Replace(" ", "");
                 string[] CardArray = allCards.ToUpper().Split(',');
 
                 //Checks amount, suits, values of cards as well as duplicates
